@@ -2,6 +2,9 @@
 #include "include/huffman_code.h"
 #include <map>
 #include <utility>
+#include <string>
+#include <set>
+
 
 #define HEAP_CAPACITY 10000
 #define BEGIN_CHAR (char) 0
