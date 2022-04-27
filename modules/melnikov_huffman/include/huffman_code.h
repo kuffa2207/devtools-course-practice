@@ -77,7 +77,7 @@ class MinHeap {
         return node;
     }
 
-    int MinHeap::add_node(char symbol, int freq,
+    int add_node(char symbol, int freq,
         Node* left = nullptr, Node* right = nullptr) {
         if (this->heap_size == HEAP_CAPACITY) {
             cout << "Heap capacity limit reached. " << endl;
@@ -107,7 +107,7 @@ class MinHeap {
     int print_heap();
     int get_huffman_code(Node*, map<char, string>&, string);
     int get_bit_size(int n);
-    string get_binary_string(int, int);
+    string MinHeap::get_binary_string(int n, unsigned int);
     string get_symbols_for_bit_length(int* , int);
     string get_encoded_text(string, map<char, string>);
     string get_decoded_text(string, map<string, char>);

@@ -36,8 +36,6 @@ int MinHeap::build_heap() {
     return 0;
 }
 
-
-
 int MinHeap::print_heap() {
     for (int i = 0; i < this->heap_size; ++i) {
         cout << this->heap_arr[i]->symbol << " - "
@@ -78,7 +76,6 @@ int MinHeap::min_heapify(int index) {
 }
 
 
-
 int MinHeap::get_huffman_code(Node* huffman_node,
     map<char, string>& encoded_symbols, string code = "") {
     if (!huffman_node->left && !huffman_node->right) {
@@ -106,11 +103,10 @@ int MinHeap::get_bit_size(int n) {
     return bits;
 }
 
-string MinHeap::get_binary_string(int n, int bit_size = -1) {
+string MinHeap::get_binary_string(int n, unsigned int bit_size = -1) {
     stringstream stream;
     string reverse_binary, binary_str;
     do {
-        static_cast<char>(n);
         stream << n % 2;
         n /= 2;
     } while (n);
@@ -186,7 +182,7 @@ map<string, char> MinHeap::get_canonical_codebook(int* bit_codes) {
         string symbols = c1.get_symbols_for_bit_length(bit_codes, bit_length);
         previous_bit_size = bit_length - 1;
 
-        for (int i = 0; i < symbols.size(); ++i) {
+        for (unsigned int i = 0; i < symbols.size(); ++i) {
             int shift_bits = bit_length - previous_bit_size;
             current_val = current_val << shift_bits;
             string binary_str = c1.get_binary_string(current_val, bit_length);
@@ -203,7 +199,7 @@ string MinHeap::get_encoded_text(string text,
     map<char, string> canonical_codes) {
     string encoded_text = "";
 
-    for (int i = 0; i < text.size(); ++i) {
+    for (unsigned int i = 0; i < text.size(); ++i) {
         encoded_text += canonical_codes[text[i]];
     }
 
@@ -212,7 +208,7 @@ string MinHeap::get_encoded_text(string text,
 
 string MinHeap::get_decoded_text(string encoded_text,
     map<string, char> canonical_codes) {
-    int start, length;
+    unsigned int start, length;
     string decoded_text = "";
     start = 0;
     length = 1;
@@ -236,7 +232,7 @@ string MinHeap::get_decoded_text(string encoded_text,
 map<char, int> MinHeap::get_frequency_map(string text) {
     map<char, int> frequency_map;
 
-    for (int i = 0; i < text.size(); ++i) {
+    for (unsigned int i = 0; i < text.size(); ++i) {
         if (frequency_map.find(text[i]) == frequency_map.end()) {
             frequency_map[text[i]] = 1;
             continue;
