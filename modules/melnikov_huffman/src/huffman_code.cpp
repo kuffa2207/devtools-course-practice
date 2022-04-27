@@ -103,7 +103,7 @@ int MinHeap::get_bit_size(int n) {
 }
 
 string MinHeap::get_binary_string(unsigned int n,
-    unsigned int bit_size = 0) {
+    unsigned int bit_size = ~0) {
     stringstream stream;
     string reverse_binary, binary_str;
     do {
