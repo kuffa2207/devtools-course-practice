@@ -1,10 +1,11 @@
 // Copyright 2022 Melnikov Aleksei
 
 #include <gtest/gtest.h>
-#include "include/huffman_code.h"
+
 #include <map>
 #include <string>
 
+#include "include/huffman_code.h"
 
 
 TEST(Melnikov_Aleksei_huffman_code, start) {
