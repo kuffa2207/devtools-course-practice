@@ -8,7 +8,6 @@
 #define END_CHAR (char) 127
 
 #include<tgmath.h>
-#include <windows.h> // NOLINT
 #include <stdio.h>
 #include <stdlib.h>
 #include<iostream>
