@@ -1,5 +1,7 @@
 // Copyright 2022 Melnikov Aleksei
 #include "include/huffman_code.h"
+#include <map>
+#include <utility>
 
 #define HEAP_CAPACITY 10000
 #define BEGIN_CHAR (char) 0
@@ -129,7 +131,7 @@ string MinHeap::get_binary_string(int n, int bit_size = -1) {
 map<char, string> MinHeap::get_canonical_code(map<char, string> huffman_code) {
     MinHeap c1;
     set<pair<char, string>, bool(*)(pair<char, string>, pair<char, string>)>
- ordered_huffman(huffman_code.begin(), huffman_code.end(), &comparator);
+    ordered_huffman(huffman_code.begin(), huffman_code.end(), &comparator);
     int current_val, previous_bit_length;
     current_val = 0;
     previous_bit_length = static_cast<int>

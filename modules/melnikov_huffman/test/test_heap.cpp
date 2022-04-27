@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 #include "include/huffman_code.h"
+#include <map>
+#include <string>
 
 
 
