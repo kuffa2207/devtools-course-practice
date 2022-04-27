@@ -1,11 +1,6 @@
 // Copyright 2022 Melnikov Aleksei
 
 #include <gtest/gtest.h>
-
-#include <map>
-#include <string>
-#include <windows.h>
-
 #include "include/huffman_code.h"
 
 
