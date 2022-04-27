@@ -4,7 +4,9 @@
 #include <utility>
 #include <string>
 #include <set>
-
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+#pragma GCC diagnostic pop
 
 #define HEAP_CAPACITY 10000
 #define BEGIN_CHAR (char) 0
