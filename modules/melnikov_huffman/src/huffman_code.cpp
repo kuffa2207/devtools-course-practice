@@ -24,9 +24,7 @@ int MinHeap::get_right_child(int i) {
 }
 
 int MinHeap::get_parent(int i) {
-    int j = static_cast<float>(i);
-    j = i / 2 - 1;
-    return j;
+    return ceil((static_cast<float>(i) / 2) - 1);
 }
 
 int MinHeap::build_heap() {
@@ -134,7 +132,7 @@ string MinHeap::get_binary_string(int n, int bit_size = -1) {
 map<char, string> MinHeap::get_canonical_code(map<char, string> huffman_code) {
     MinHeap c1;
     set<pair<char, string>, bool(*)(pair<char, string>, pair<char, string>)>
-    ordered_huffman(huffman_code.begin(), huffman_code.end(), &comparator);
+        ordered_huffman(huffman_code.begin(), huffman_code.end(), &comparator);
     int current_val, previous_bit_length;
     current_val = 0;
     previous_bit_length = static_cast<int>
