@@ -4,6 +4,7 @@
 
 #include <map>
 #include <string>
+#include <windows.h>
 
 #include "include/huffman_code.h"
 
