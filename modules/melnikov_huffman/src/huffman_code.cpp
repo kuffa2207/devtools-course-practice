@@ -4,9 +4,6 @@
 #include <utility>
 #include <string>
 #include <set>
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wmissing-prototypes"
-#pragma GCC diagnostic pop
 
 #define HEAP_CAPACITY 10000
 #define BEGIN_CHAR (char) 0
@@ -106,7 +103,7 @@ int MinHeap::get_bit_size(int n) {
 }
 
 string MinHeap::get_binary_string(unsigned int n,
-    unsigned int bit_size = -1) {
+    unsigned int bit_size = 0) {
     stringstream stream;
     string reverse_binary, binary_str;
     do {
