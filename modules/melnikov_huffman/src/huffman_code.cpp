@@ -110,9 +110,8 @@ string MinHeap::get_binary_string(unsigned int n,
         stream << n % 2;
         n /= 2;
     } while (n);
-    unsigned int sizeB = bit_size;
-    if (sizeB != -1 && stream.str().size() < sizeB) {
-        unsigned int padding_size = sizeB - stream.str().size();
+    if (bit_size != ~0 && stream.str().size() < bit_size) {
+        unsigned int padding_size = bit_size - stream.str().size();
         while (padding_size--) {
             stream << '0';
         }
