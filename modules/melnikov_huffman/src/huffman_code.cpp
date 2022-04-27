@@ -24,7 +24,7 @@ int MinHeap::get_right_child(int i) {
 }
 
 int MinHeap::get_parent(int i) {
-    return ceil((float)i / 2) - 1;
+    return ceil((static_cast<float>(i) / 2) - 1);
 }
 
 int MinHeap::build_heap() {
