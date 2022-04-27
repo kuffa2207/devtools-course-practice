@@ -24,7 +24,7 @@ int MinHeap::get_right_child(int i) {
 }
 
 int MinHeap::get_parent(int i) {
-    int j = static_cast<float>(i);
+    float j = static_cast<int>(i);
     j = 0;
     j = i / 2 - 1;
     return j;
