@@ -133,15 +133,6 @@ TEST(Melnikov_Aleksei_huffman_code, get_canonical_codebooks_test) {
     ASSERT_NO_THROW(c1.get_canonical_codebook(ic));
 }
 
-TEST(Melnikov_Aleksei_huffman_code, get_symbols_for_bit_length_test_eq) {
-    MinHeap c1;
-    int i;
-    int* ic = new int;
-    int j = 6;
-    string b = "";
-    ASSERT_EQ(c1.get_symbols_for_bit_length(ic, j), b);
-}
-
 TEST(Melnikov_Aleksei_huffman_code, get_symbols_for_bit_length_test) {
     MinHeap c1;
     int i;
