@@ -40,16 +40,16 @@ TEST(Melnikov_Aleksei_huffman_code, get_parent_test) {
     ASSERT_NO_THROW(c1.get_parent(i));
 }
 
+TEST(Melnikov_Aleksei_huffman_code, get_parent_test_eq) {
+    MinHeap c1;
+    int i = 1;
+    ASSERT_EQ(c1.get_parent(i), 0);
+}
+
 TEST(Melnikov_Aleksei_huffman_code, build_heap_test) {
     MinHeap c1;
     ASSERT_NO_THROW(c1.build_heap());
 }
-
-TEST(Melnikov_Aleksei_huffman_code, print_heap_test) {
-    MinHeap c1;
-    ASSERT_NO_THROW(c1.print_heap());
-}
-
 
 TEST(Melnikov_Aleksei_huffman_code, min_heapify_test) {
     MinHeap c1;
@@ -70,6 +70,13 @@ TEST(Melnikov_Aleksei_huffman_code, get_bit_size_test) {
     ASSERT_NO_THROW(c1.get_bit_size(i));
 }
 
+TEST(Melnikov_Aleksei_huffman_code, get_bit_size_test_eq) {
+    MinHeap c1;
+    int i = 1;
+    int j = 5;
+    ASSERT_EQ(c1.get_bit_size(i), 1);
+}
+
 TEST(Melnikov_Aleksei_huffman_code, get_bit_size_test_count) {
     MinHeap c1;
     int i = 2;
@@ -84,12 +91,31 @@ TEST(Melnikov_Aleksei_huffman_code, get_binary_string_test) {
     ASSERT_NO_THROW(c1.get_binary_string(i, bit));
 }
 
+TEST(Melnikov_Aleksei_huffman_code, get_binary_string_test_eq) {
+    MinHeap c1;
+    int i = 1;
+    int bit = -1;
+    string bin_str = "1";
+    ASSERT_EQ(c1.get_binary_string(i, bit), bin_str);
+}
+
+
 TEST(Melnikov_Aleksei_huffman_code, get_canonical_code_test) {
     MinHeap c1;
     map<char, string> encoded_symbols;
     encoded_symbols[1] = "a";
     string code = "0";
     ASSERT_NO_THROW(c1.get_canonical_code(encoded_symbols));
+}
+
+TEST(Melnikov_Aleksei_huffman_code, get_canonical_code_test_eq) {
+    MinHeap c1;
+    map<char, string> canonical_codes;
+    canonical_codes[1] = "0";
+    map<char, string> encoded_symbols;
+    encoded_symbols[1] = "a";
+    string code = "0";
+    ASSERT_EQ(c1.get_canonical_code(encoded_symbols), canonical_codes);
 }
 
 TEST(Melnikov_Aleksei_huffman_code, get_bit_length_codes_test) {
@@ -107,6 +133,15 @@ TEST(Melnikov_Aleksei_huffman_code, get_canonical_codebooks_test) {
     ASSERT_NO_THROW(c1.get_canonical_codebook(ic));
 }
 
+TEST(Melnikov_Aleksei_huffman_code, get_symbols_for_bit_length_test_eq) {
+    MinHeap c1;
+    int i;
+    int* ic = new int;
+    int j = 6;
+    string b = "";
+    ASSERT_EQ(c1.get_symbols_for_bit_length(ic, j), b);
+}
+
 TEST(Melnikov_Aleksei_huffman_code, get_symbols_for_bit_length_test) {
     MinHeap c1;
     int i;
@@ -122,6 +157,16 @@ TEST(Melnikov_Aleksei_huffman_code, get_encoded_text_test) {
     string code = "0";
     string a = "text";
     ASSERT_NO_THROW(c1.get_encoded_text(a, canonical_codes));
+}
+
+TEST(Melnikov_Aleksei_huffman_code, get_encoded_text_test_eq) {
+    MinHeap c1;
+    map<char, string> canonical_codes;
+    canonical_codes[1] = "a";
+    string code = "0";
+    string a = "text";
+    string b = "";
+    ASSERT_EQ(c1.get_encoded_text(a, canonical_codes), b);
 }
 
 TEST(Melnikov_Aleksei_huffman_code, get_decoded_text_test) {
