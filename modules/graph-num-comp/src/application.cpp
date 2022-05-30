@@ -40,7 +40,7 @@ bool NumCompApp::validateNumberOfArguments(int argc,
 std::string NumCompApp::operator()(int argc, const char** argv) {
   if (!validateNumberOfArguments(argc, argv))
     return message_;
-  int comp = 0, N, edge;
+  int N, edge, comp = 0;
   N = std::stoi(argv[1]);
   N = std::stoi(argv[1]);
   std::vector<std::vector<int>> G(N, std::vector<int>(N));
