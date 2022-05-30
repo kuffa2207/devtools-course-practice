@@ -1,6 +1,7 @@
 // Copyright 2022 Melnikov Aleksei
 
 #include <string>
+#include <vector>
 #include <iostream>
 #include "include/application.h"
 #include "include/num_comp.h"
