@@ -42,7 +42,6 @@ std::string NumCompApp::operator()(int argc, const char** argv) {
     return message_;
   int N, edge, comp = 0;
   N = std::stoi(argv[1]);
-  N = std::stoi(argv[1]);
   std::vector<std::vector<int>> G(N, std::vector<int>(N));
   for (int i = 0; i < argc - 2; i++) {
     for (int j = 0; j < std::stoi(argv[1]); j++) {
